@@ -123,7 +123,20 @@ class SimpleRAGSystem:
         except Exception as e:
             print("nomic-embed-text model not found!")
             print("Please install: ollama pull nomic-embed-text")
-            sys.exit(1)
+            
+            install_choice = input("\nInstall nomic-embed-text automatically? (y/N): ").strip().lower()
+            if install_choice == 'y':
+                print("Installing nomic-embed-text...")
+                os.system("ollama pull nomic-embed-text")
+                try:
+                    self.embeddings = OllamaEmbeddings(model="nomic-embed-text")
+                    test_embedding = self.embeddings.embed_query("test")
+                    print("Successfully installed and loaded nomic-embed-text")
+                except:
+                    print("Installation failed. Please install manually: ollama pull nomic-embed-text")
+                    sys.exit(1)
+            else:
+                sys.exit(1)
 
     def load_pdfs(self, pdf_sources):
         """Load PDFs from various sources"""
@@ -368,6 +381,7 @@ Answer:"""
         """Interactive chat mode"""
         print(f"\nRAG Research Assistant")
         print(f"Current model: {self.model_name}")
+        print(f"Embeddings: nomic-embed-text")
         
         print("\nCommands:")
         print("  - Ask research questions")

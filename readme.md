@@ -3,16 +3,16 @@
 ## download Ollama:
 https://ollama.com
 
-##r un Ollama:
+## run Ollama:
 
-''' 
+```bash
 ollama --version
 ollama pull llama3.2
 ollama run llama3.2
-'''
+```
 
 # to run our code, cd into the directory and:
-''' 
+```bash
 python ollama_pdf.py research_paper.pdf
 python ollama_multipdf.py paper1.pdf paper2.pdf 
 
@@ -24,5 +24,5 @@ python simple_rag.py papers/
 
 #Load pattern immediately  
 python simple_rag.py *.pdf
-'''
+```
 

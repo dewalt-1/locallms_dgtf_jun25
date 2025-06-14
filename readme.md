@@ -16,13 +16,30 @@ ollama run llama3.2
 python ollama_pdf.py research_paper.pdf
 python ollama_multipdf.py paper1.pdf paper2.pdf 
 
-#Interactive mode
-python simple_rag.py
-
-#Load directory immediately
-python simple_rag.py papers/
-
-#Load pattern immediately  
-python simple_rag.py *.pdf
 ```
 
+# Simple RAG
+
+## windows
+```bash
+# 1. Navigate to folder with script
+cd ~/Desktop/workshop_files
+
+# 2. Run RAG system
+python3 simple_rag.py
+
+# 3. Load your papers (when prompted)
+Your question: load papers/
+```
+
+## mac
+```bash
+# 1. Navigate to folder with script
+cd ~/Desktop/workshop_files
+
+# 2. Run RAG system
+python3 simple_rag.py
+
+# 3. Load your papers (when prompted)
+Your question: load papers/
+```

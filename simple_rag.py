@@ -27,15 +27,21 @@ def install_requirements():
             print(f"Installing {package}...")
             os.system(f"pip install {package}")
 
+# Install requirements first
 install_requirements()
 
 # Now import everything
-from langchain_community.document_loaders import PyPDFLoader
-from langchain_ollama import ChatOllama, OllamaEmbeddings
-from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Chroma
-from langchain.chains import RetrievalQA
-from langchain.prompts import PromptTemplate
+try:
+    from langchain_community.document_loaders import PyPDFLoader
+    from langchain_ollama import ChatOllama, OllamaEmbeddings
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+    from langchain_community.vectorstores import Chroma
+    from langchain.chains import RetrievalQA
+    from langchain.prompts import PromptTemplate
+except ImportError as e:
+    print(f"Import error: {e}")
+    print("Please install manually: pip install langchain langchain-ollama langchain-community langchain-chroma pypdf chromadb")
+    sys.exit(1)
 
 class SimpleRAGSystem:
     def __init__(self):

@@ -12,34 +12,31 @@ ollama run llama3.2
 ```
 
 # to run our code, cd into the directory and:
+
+## macOS
 ```bash
-python ollama_pdf.py research_paper.pdf
-python ollama_multipdf.py paper1.pdf paper2.pdf 
-
-```
-
-# Simple RAG
-
-## windows
-```bash
-# 1. Navigate to folder with script
 cd ~/Desktop/workshop_files
 
-# 2. Run RAG system
-python3 simple_rag.py
+# Basic PDF Chat (single document)
+python3 basic_pdf_research.py papers/paper1.pdf
 
-# 3. Load your papers (when prompted)
-Your question: load papers/
+# Multi-PDF Chat (multiple documents)  
+python3 multi_pdf_research.py papers/
+
+# RAG System (smart search)
+python3 simple_rag.py papers/
 ```
 
-## mac
+## Windows
 ```bash
-# 1. Navigate to folder with script
-cd ~/Desktop/workshop_files
+cd C:\Users\YourName\Desktop\workshop_files
 
-# 2. Run RAG system
-python3 simple_rag.py
+# Basic PDF Chat (single document)
+python basic_pdf_research.py papers/paper1.pdf
 
-# 3. Load your papers (when prompted)
-Your question: load papers/
+# Multi-PDF Chat (multiple documents)
+python multi_pdf_research.py papers/
+
+# RAG System (smart search) 
+python simple_rag.py papers/
 ```

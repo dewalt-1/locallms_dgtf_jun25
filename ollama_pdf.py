@@ -26,6 +26,24 @@ def install_requirements():
 
 install_requirements()
 
+# Check and install required packages
+def install_requirements():
+    packages = [
+        "langchain",
+        "langchain-ollama", 
+        "langchain-community",
+        "pypdf"
+    ]
+    
+    for package in packages:
+        try:
+            __import__(package.replace("-", "_"))
+        except ImportError:
+            print(f"Installing {package}...")
+            os.system(f"pip install {package}")
+
+install_requirements()
+
 # Now import everything
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_ollama import ChatOllama
